@@ -19,9 +19,20 @@ import org.jetbrains.compose.resources.painterResource
 import kointest1.shared.generated.resources.Res
 import kointest1.shared.generated.resources.compose_multiplatform
 
+import org.koin.core.context.startKoin
+import org.koin.mp.KoinPlatform
+import org.koin.core.KoinApplication
+import org.koin.core.logger.Level
+
 @Composable
 @Preview
 fun App() {
+    startKoin {
+       modules(userModule)
+    }
+
+    //val userApplication = KoinPlatform.getKoin().get<UserApplication>()
+    //userApplication.sayHello("Alice")
     MaterialTheme {
         var showContent by remember { mutableStateOf(false) }
         Column(

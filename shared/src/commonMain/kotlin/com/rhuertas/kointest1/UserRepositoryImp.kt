@@ -14,6 +14,3 @@ class UserRepositoryImp : UserRepository {
     }
 }
 
-val appModule = module {
-    single<UserRepository> { UserRepositoryImp() }
-}
