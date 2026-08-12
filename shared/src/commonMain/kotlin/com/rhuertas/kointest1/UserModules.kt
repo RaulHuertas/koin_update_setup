@@ -9,6 +9,6 @@ import org.koin.core.annotation.Module
 //    single { UserApplication(get()) }
 //}
 
-@Module
-@ComponentScan("com.rhuertas.kointest1")
-class AppModule
+//@Module
+//@ComponentScan("com.rhuertas.kointest1")
+//class AppModule
