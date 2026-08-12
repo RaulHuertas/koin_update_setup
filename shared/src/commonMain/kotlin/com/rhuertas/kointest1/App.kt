@@ -33,19 +33,19 @@ import org.koin.mp.KoinPlatform
 @Composable
 @Preview
 fun App(
-    platformModule: Module = Module(),
+    //platformModule: Module = Module(),
 ) {
-    //KoinApplication(
-    //    configuration = koinConfiguration {
-    //        modules(UnisonoModule())
-    //    },
-    //)
-    //{
+    KoinApplication(
+        configuration = koinConfiguration {
+            modules(unisonoModule)
+        },
+    )
+    {
     //content = {
         //val userApplication = KoinPlatform.getKoin().get<UserApplication>()
         val unisono = KoinPlatform.getKoin().get<Unisono>()
         //val unisono = koinInject<Unisono>()
-        //println(unisono.sayHello("Bob"))
+        println(unisono.sayHello("Bob"))
         MaterialTheme {
             var showContent by remember { mutableStateOf(false) }
             Column(
@@ -73,6 +73,6 @@ fun App(
                 }
             }
         }
-    //}
+    }
 
 }

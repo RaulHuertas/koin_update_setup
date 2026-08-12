@@ -23,5 +23,5 @@ class UnisonoImpl : Unisono {
 
 // Shared definitions (Compiler Plugin DSL)
 val unisonoModule = module {
-    single<UnisonoImpl>()
+    single<Unisono> {UnisonoImpl()}
 }
