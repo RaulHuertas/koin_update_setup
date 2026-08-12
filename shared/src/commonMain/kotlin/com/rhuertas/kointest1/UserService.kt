@@ -1,11 +1,14 @@
 package com.rhuertas.kointest1
 
+import org.koin.core.annotation.Single
+
 interface UserService {
     fun getUserOrNull(name: String): User?
     fun loadUsers()
     fun prepareHelloMessage(user: User?): String
 }
 
+@Single
 class UserServiceImpl(
     private val userRepository: UserRepository
 ) : UserService {

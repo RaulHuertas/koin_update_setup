@@ -15,23 +15,37 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import org.jetbrains.compose.resources.painterResource
-import org.koin.compose.KoinApplication
 import org.koin.compose.koinInject
 import org.koin.dsl.koinConfiguration
 
 import kointest1.shared.generated.resources.Res
 import kointest1.shared.generated.resources.compose_multiplatform
+import org.koin.compose.KoinApplication
+import org.koin.core.annotation.ComponentScan
+import org.koin.core.annotation.KoinApplication
+import org.koin.core.annotation.KoinExperimentalAPI
+import org.koin.core.annotation.Module
+import org.koin.dsl.KoinAppDeclaration
+import org.koin.dsl.koinConfiguration
+import org.koin.mp.KoinPlatform
+
 
 @Composable
 @Preview
-fun App() {
+fun App(
+    //appDeclaration: KoinAppDeclaration? = null,
+    platformModule: Module = Module(),
+) {
     KoinApplication(
-        configuration = koinConfiguration {
-            modules(userModule)
+        application = {
         }
-    ) {
-        val userApplication = koinInject<UserApplication>()
-
+    )
+    {
+    //content = {
+        //val userApplication = KoinPlatform.getKoin().get<UserApplication>()
+        //val unisono = KoinPlatform.getKoin().get<Unisono>()
+        //val unisono = koinInject<Unisono>()
+        //println(unisono.sayHello("Bob"))
         MaterialTheme {
             var showContent by remember { mutableStateOf(false) }
             Column(
@@ -43,7 +57,7 @@ fun App() {
             ) {
                 Button(onClick = {
                     showContent = !showContent
-                    userApplication.sayHello("Alice")
+                    //userApplication.sayHello("Alice")
                 }) {
                     Text("Click me!")
                 }
@@ -60,4 +74,5 @@ fun App() {
             }
         }
     }
+
 }

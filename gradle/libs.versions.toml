@@ -47,7 +47,6 @@ koin-compose-viewmodel = { module = "io.insert-koin:koin-compose-viewmodel", ver
 koin-ktor = { module = "io.insert-koin:koin-ktor", version.ref = "koin-bom" }
 koin-test = { module = "io.insert-koin:koin-test", version.ref = "koin-bom" }
 koin-annotations = { module = "io.insert-koin:koin-annotations", version.ref = "koin-bom" }
-
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidMultiplatformLibrary = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }

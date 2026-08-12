@@ -1,7 +1,9 @@
 package com.rhuertas.kointest1
 
+import org.koin.core.annotation.Single
 import org.koin.dsl.module
 
+@Single
 class UserRepositoryImp : UserRepository {
     private val _users = arrayListOf<User>()
 
